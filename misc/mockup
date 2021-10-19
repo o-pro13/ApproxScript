@@ -1,0 +1,20 @@
+--LEXER--
+
+passed: char array with line of code
+
+loops through every charachter and constructs tokens;
+creates tokenized_array with tokens;
+
+returns: tokenized_array
+
+
+    #define[
+        token: 
+            A ?struct? to define what a part of the code does;
+            I.E: INT(10).
+
+        tokenized_array:
+            Array with tokens in OOP;
+            i.e: INT X = 10;  ->  {VAR(INT, X), INT(10)};
+            i.e: INT X = 10+5;  ->  {VAR(INT, X), INT(10), ADDITION, INT(5)}.
+    ]
