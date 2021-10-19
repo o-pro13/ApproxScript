@@ -22,7 +22,7 @@ char * TOKENS[] = {NULL, "INT_DECLARATOR", "INT"};
 
 void lex(char line[MAX_LINE_LENGTH]) {
     int declarator_token, value_token;
-
+    //TODO: lex from list, not STDIN
     declarator_token = yylex();
     
 }

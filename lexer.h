@@ -11,6 +11,7 @@
     #define LEX_ERROR 0xffff
 
     //Functions
+    //TODO: update for refactor
     void lex(char line[MAX_LINE_LENGTH]);
     #define LEXER
 #endif
