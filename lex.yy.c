@@ -372,11 +372,11 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    4,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    6,    1,    1,    1,    1,    7,    1,    1,
-        1,    1,    1,    8,    1,    1,    1,    1,    1,    1,
+        1,    1,    5,    1,    1,    1,    1,    6,    1,    1,
+        1,    1,    1,    7,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,35 +398,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[9] =
+static const YY_CHAR yy_meta[8] =
     {   0,
-        1,    1,    1,    2,    2,    1,    1,    1
+        1,    1,    1,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[14] =
+static const flex_int16_t yy_base[13] =
     {   0,
-        0,    0,   12,   13,   13,   13,    0,    4,    0,    2,
-       13,   13,    7
+        0,    0,   12,   13,   13,   13,    7,    4,    5,    1,
+       13,   13
     } ;
 
-static const flex_int16_t yy_def[14] =
+static const flex_int16_t yy_def[13] =
     {   0,
-       12,    1,   12,   12,   12,   12,   13,   12,   13,   12,
-       12,    0,   12
+       12,    1,   12,   12,   12,   12,   12,   12,   12,   12,
+       12,    0
     } ;
 
-static const flex_int16_t yy_nxt[22] =
+static const flex_int16_t yy_nxt[21] =
     {   0,
-        4,    5,    6,    4,    7,    8,    4,    4,    9,   11,
-       10,   12,    3,   12,   12,   12,   12,   12,   12,   12,
-       12
+        4,    5,    6,    7,    8,    4,    4,   11,    9,   10,
+        9,   12,    3,   12,   12,   12,   12,   12,   12,   12
     } ;
 
-static const flex_int16_t yy_chk[22] =
+static const flex_int16_t yy_chk[21] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,   13,   10,
-        8,    3,   12,   12,   12,   12,   12,   12,   12,   12,
-       12
+        1,    1,    1,    1,    1,    1,    1,   10,    9,    8,
+        7,    3,   12,   12,   12,   12,   12,   12,   12,   12
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -446,8 +444,8 @@ char *yytext;
 #line 1 "lexer.l"
 #line 2 "lexer.l"
     #include "lexer.h"
-#line 449 "lex.yy.c"
-#line 450 "lex.yy.c"
+#line 447 "lex.yy.c"
+#line 448 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -667,7 +665,7 @@ YY_DECL
 #line 5 "lexer.l"
 
 
-#line 670 "lex.yy.c"
+#line 668 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -727,30 +725,30 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 7 "lexer.l"
-return INT_DECLARATOR;
+{return (INT_DECLARATOR);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 8 "lexer.l"
-return INT;
+{return (INT);}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
 #line 9 "lexer.l"
-;
+{;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 10 "lexer.l"
-return LEX_ERROR;
+{return (LEX_ERROR);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 12 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 753 "lex.yy.c"
+#line 751 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

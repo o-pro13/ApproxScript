@@ -27,12 +27,12 @@ int main(){
     //determine the length of the input
     for (int i = 0; i < MAX_LINE_LENGTH; i++) {
         input_length++;
-        if (line[i] == "\n" || line[i] == 0){
+        if (&line[i] == 0){
             break;
         }
     }
     //make new array of input length
-    char * refactored_line[input_length];
+    char refactored_line[input_length];
     //copy the input in LINE to REFACTORED_LINE
     for (int i = 0; i < input_length; i++) {
         refactored_line[i] = line[i];

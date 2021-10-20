@@ -1,5 +1,6 @@
+*.o
+
+tests
 .vscode
-lexer.o
-main.o
 ApproxScript
 legacy
