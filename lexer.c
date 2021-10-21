@@ -34,12 +34,12 @@ char * TOKENS[] = {
     "STRING"};
 
 
-void lex(char line[]) {
+ void lex(char line[], int * tokens[]) {
     //declare token variables for lexing
     int declarator_token, value_token;
 
     //-load LINE into YYIN-
-    /*YYIN is of type FILE; hence this workaround to load LINE into YYIN while avoiding a segfault*/
+    /*YYIN is of type FILE; hence this workaround to load LINE into YYIN*/
     
     //tempfile for storing LINE
     FILE * line_temp_file = tmpfile();

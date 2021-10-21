@@ -27,7 +27,7 @@ int main(){
     //determine the length of the input
     for (int i = 0; i < MAX_LINE_LENGTH; i++) {
         input_length++;
-        if (&line[i] == 0){
+        if (&line[i] == 0 || &line[i] == '\n'){
             break;
         }
     }
@@ -39,8 +39,10 @@ int main(){
     }
     //free memory for LINE
     free(line);
+    
+    int * tokens = malloc((size_t)input_length);
 
-    lex(refactored_line);
+    lex(refactored_line, &tokens);
 
     return 0;
 }
