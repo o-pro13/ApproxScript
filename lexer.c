@@ -12,6 +12,7 @@ Author: Olivier van Asperen
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 
 #include "lexer.h"
@@ -19,11 +20,19 @@ Author: Olivier van Asperen
 //declare external variables
 extern int yylex();
 extern int yylineno;
-extern FILE yyin;
+extern FILE * yyin;
 extern char * yytext;
 
-//delcare token types in order
-char * TOKENS[] = {NULL, "INT_DECLARATOR", "INT"};
+//delcare token type names in order
+char * TOKENS[] = {
+    NULL, 
+    "INT_DECLARATOR", 
+    "INT", 
+    "IDENTIFIER", 
+    "ASSIGN", 
+    "OPERATOR", 
+    "STRING"};
+
 
 void lex(char line[]) {
     //declare token variables for lexing
@@ -41,12 +50,15 @@ void lex(char line[]) {
     //rewind pointer for LINE_TEMP_FILE
     rewind(line_temp_file);
     //write LINE_TEMP_FILE to YYIN
-    //TODO: write to that fucking file
-    memcpy(&yyin, line_temp_file, sizeof(line_temp_file));
-    declarator_token = yylex();
+    yyin = line_temp_file;
+
+    int token = yylex();
     //loop through tokens
-    while(declarator_token) {
-        printf("%d\n", declarator_token);
-        declarator_token = yylex();
+    while(token) {
+        if (token == LEX_ERROR){
+            printf("SyntaxError in line %d; unexpexted char: [%s]", yylineno, yytext);
+        }
+        printf("%d\n", token);
+        token = yylex();
     }
 }

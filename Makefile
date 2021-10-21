@@ -15,9 +15,6 @@ main.o : main.c lexer.h
 lexer.o: lexer.c lexer.h
 	$(CC) $(CMPFLAGS) lexer.c
 
-lex.yy.c: lexer.l
-	$(LEX) lexer.l
-
 lex.yy.o: lex.yy.c lexer.h
 	$(CC) $(CMPFLAGS) lex.yy.c
 
