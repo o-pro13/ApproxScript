@@ -18,3 +18,10 @@ returns: tokenized_array
             i.e: INT X = 10;  ->  {VAR(INT, X), INT(10)};
             i.e: INT X = 10+5;  ->  {VAR(INT, X), INT(10), ADDITION, INT(5)}.
     ]
+
+--HELLO WORLD--
+
+DO { 
+STRING msg = "Hello World"~~~
+print(msg)~~~
+}
