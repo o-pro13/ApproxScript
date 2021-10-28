@@ -1,6 +1,6 @@
 /*
 --APPROX SCRIPT--
-Version:000A = 0.0.0-A
+Version:000A = 0.0.1-A
 Date: October-19-2021
 
 Author: Olivier van Asperen
@@ -13,6 +13,12 @@ Author: Olivier van Asperen
 
 //include proprietary
 #include "lexer.h"
+
+void print_tokens(int * tokens, int tokens_length) {
+    for(int i = 0; i < tokens_length; i++) {
+        printf("%d\n", tokens[i]);
+    }
+}
 
 int main(){
     //allocate memory for a code line
@@ -27,7 +33,7 @@ int main(){
     //determine the length of the input
     for (int i = 0; i < MAX_LINE_LENGTH; i++) {
         input_length++;
-        if (&line[i] == 0 || &line[i] == '\n'){
+        if (line[i] == 0 || line[i] == '\n'){
             break;
         }
     }
@@ -41,8 +47,8 @@ int main(){
     free(line);
     
     int * tokens = malloc((size_t)input_length);
-
-    lex(refactored_line, &tokens);
-
+    
+    int tokens_length = lex(refactored_line, tokens, input_length);
+    print_tokens(tokens, tokens_length);
     return 0;
 }

@@ -1,6 +1,6 @@
-#ifndef LEXER
+#ifndef _LEXER
 //Environment macros
-#define VERSION "000A"
+#define VERSION "001A"
 #define MAX_LINE_LENGTH 512
 
 
@@ -29,6 +29,6 @@
 #define LEX_ERROR 0xFFFF
 
 //Functions
-void lex(char line[], int * tokens[]);
-#define LEXER
+int lex(char line[], int tokens[], int line_length);
+#define _LEXER
 #endif
